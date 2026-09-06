@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>분당 성경세미나 초대 | BIBLE SEMINAR INVITATION</title>
+<meta name="description" content="성경세미나에 초대합니다. 2026.10.8(목)-11(일) · 기독교복음침례회 분당교회">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+  /* ===== 400px 기준 비례 스케일 (1rem = 10 design px) =====
+     데스크톱: 400px 고정, 좌우 남색 배경
+     모바일(<500px): 400px 디자인이 가로폭에 맞춰 비례 확대/축소 */
+  :root{
+    --navy:#101435;        /* 바깥 배경 / 타임테이블 블록 */
+    --navy-txt:#252c51;    /* 진한 남색 텍스트 */
+    --beige:#d7cdc2;       /* 강연내용 / 오시는길 섹션 */
+    --lav:#e3e4eb;         /* 타임테이블 / 안내사항 섹션 */
+    --grid-bg:#f1f2f6;     /* 타임테이블 그리드 영역 */
+    --line:#c8cad6;        /* 그리드 선 */
+    --cream:#f2ede3;       /* 히어로 밝은 텍스트 */
+    --maroon:#9b253e;      /* 강조(빨강) */
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-text-size-adjust:100%;}
+  html{font-size:10px;}                       /* 데스크톱: 1rem = 10px → frame 40rem = 400px */
+  @media (max-width:639.98px){
+    html{font-size:calc(100vw / 40);}         /* 모바일: 1rem = 100vw/40 → frame 40rem = 100vw (남색 없이 비례 확대/축소) */
+  }
+  body{
+    background:var(--navy);
+    font-family:'Pretendard','Pretendard Variable','Apple SD Gothic Neo','Malgun Gothic',system-ui,sans-serif;
+    color:var(--navy-txt);
+    line-height:1.5;
+    letter-spacing:-0.025em;   /* Illustrator 트래킹 -25 = -0.025em */
+    -webkit-font-smoothing:antialiased;
+  }
+  .frame{
+    width:40rem;               /* 400px */
+    margin:0 auto;
+    background:var(--beige);
+    overflow:hidden;
+    position:relative;
+  }
+  img{display:block;max-width:100%;}
+  .center{text-align:center;}
+
+  /* ================= HERO ================= */
+  .hero{
+    position:relative;
+    width:40rem;height:66.2rem;               /* 400 x 662 */
+    background:url("2026_bible-seminar_bundang/main_bg_2x.png") center/cover no-repeat;
+    color:var(--navy-txt);
+  }
+  .hero .invite{position:absolute;top:6.6rem;left:0;right:0;text-align:center;
+    font-size:1.55rem;font-weight:600;letter-spacing:.18em;color:var(--navy-txt);}
+  .hero .logo{position:absolute;top:8rem;left:0;width:40rem;}
+  .hero .logo img{width:100%;}
+  .hero .subtitle{position:absolute;top:41.2rem;left:0;width:40rem;}
+  .hero .subtitle img{width:100%;}
+  .hero .date{position:absolute;top:57.3rem;left:0;right:0;text-align:center;
+    color:var(--navy-txt);font-size:2.2rem;font-weight:700;}
+  .hero .date small{font-size:1.35rem;font-weight:700;vertical-align:.18em;}
+  .hero .host{position:absolute;top:61.6rem;left:0;right:0;text-align:center;
+    color:var(--navy-txt);font-size:1.5rem;font-weight:500;}
+  .hero .host b{font-weight:700;}
+
+  /* ============ SECTION 공통 ============ */
+  section{padding:0 3rem;}
+  .sec-title{font-size:2.7rem;font-weight:700;color:var(--navy-txt);text-align:center;}
+
+  /* ============ 주요 강연 내용 ============ */
+  .talks{background:var(--beige);padding-top:5.6rem;padding-bottom:6rem;}
+  .talks .sec-title{margin-bottom:4.4rem;}
+  .talk{text-align:center;margin-bottom:3.4rem;}
+  .talk:last-child{margin-bottom:0;}
+  .talk h3{font-size:1.8rem;font-weight:700;color:var(--navy-txt);margin-bottom:1.1rem;}
+  .talk p{font-size:1.55rem;font-weight:400;color:#3a4064;word-break:keep-all;}
+
+  /* ============ 세미나 일정표 ============ */
+  .schedule{background:var(--lav);padding:5.6rem 0 5.2rem;}
+  .schedule .sec-title{margin-bottom:3.6rem;padding:0 3rem;}
+
+  .tt{position:relative;display:flex;width:40rem;margin:0 auto;
+      background:var(--grid-bg);}
+  .tt-time{flex:0 0 7rem;position:relative;background:var(--lav);z-index:3;}
+  .tt-scroll{flex:1 1 auto;overflow-x:auto;overflow-y:hidden;
+      -webkit-overflow-scrolling:touch;scrollbar-width:none;}
+  .tt-scroll::-webkit-scrollbar{display:none;}
+  .tt-inner{width:58rem;position:relative;}   /* 4 days x 14rem + 우측 여백 2rem */
+
+  .tt-headh{height:4.4rem;}                    /* 헤더 높이 (time+inner 동일) */
+  .tt-head{display:flex;height:4.4rem;}
+  .tt-head .th{width:14rem;padding-left:2rem;}
+  .tt-head .th span{display:block;width:12rem;text-align:center;
+      font-size:1.55rem;font-weight:600;color:var(--navy-txt);line-height:4.4rem;}
+
+  .tt-grid{position:relative;height:57.6rem;}  /* 10:00~22:00 = 12h x 4.8rem */
+
+  /* 시간 라벨 (좌측 고정) */
+  .tt-time .tlab{position:absolute;right:1.1rem;transform:translateY(-50%);
+      font-size:1.45rem;font-weight:500;color:var(--navy-txt);}
+
+  /* 시간 구분선 (4열 가로지름) */
+  .hline{position:absolute;left:0;width:58rem;height:0;border-top:.1rem solid var(--line);}
+
+  /* 요일 열 */
+  .day{position:absolute;top:0;width:14rem;height:57.6rem;}
+  .day.d0{left:0;} .day.d1{left:14rem;} .day.d2{left:28rem;} .day.d3{left:42rem;}
+
+  /* 일정 블록 : 시각 좌표(top)+길이(height)로 구분선 위에 얹힘 */
+  .blk{position:absolute;left:2rem;width:12rem;
+      display:flex;align-items:center;justify-content:center;text-align:center;
+      font-size:1.45rem;line-height:1.3;padding:0 .4rem;}
+  .blk.lec{background:var(--navy);color:#fff;font-weight:500;}
+  .blk.meal{background:#e0e1ea;color:var(--navy-txt);font-weight:500;}
+  .blk.gap{color:var(--navy-txt);font-weight:500;background:transparent;}
+
+  /* ============ 안내사항 ============ */
+  .notice{background:var(--lav);padding:5.6rem 1.2rem 6.4rem;}
+  .notice .sec-title{margin-bottom:1.8rem;}
+  .notice .lead{text-align:center;font-size:1.55rem;color:#3a4064;margin-bottom:5rem;word-break:keep-all;}
+  .grid7{display:grid;grid-template-columns:1fr 1fr;row-gap:3.5rem;column-gap:1rem;}
+  .ni{text-align:center;}
+  .ni.solo{grid-column:1 / -1;max-width:calc((100% - 1rem) / 2);}
+  .ni .ico{height:6.2rem;display:flex;align-items:flex-end;justify-content:center;}
+  .ni .ico img{height:100%;width:auto;}
+  .ni p{font-size:1.5rem;font-weight:600;color:var(--navy-txt);line-height:1.5;word-break:keep-all;}
+
+  /* ============ 오시는 길 ============ */
+  .location{background:var(--beige);padding-top:5.6rem;padding-bottom:6rem;}
+  .location .sec-title{margin-bottom:3.8rem;}
+  .location .map{width:40rem;margin:0 -3rem 4.2rem;}   /* 섹션 좌우 패딩 상쇄 → 풀폭 */
+  .location .map img{width:100%;}
+  .info{font-size:1.55rem;color:var(--navy-txt);}
+  .row{display:flex;margin-bottom:2.4rem;}
+  .row .lb{flex:0 0 7rem;font-weight:700;}
+  .row .vl{flex:1 1 auto;line-height:1.55;}
+  .row .vl .naver{display:inline-block;margin-top:.6rem;color:var(--maroon);font-weight:600;
+      text-decoration:underline;text-underline-offset:.25rem;}
+  .row .vl .rd{color:var(--maroon);}
+  .subhead{font-size:1.55rem;font-weight:400;color:var(--navy-txt);margin:1.2rem 0 2rem;}
+  .bus-grp{margin-bottom:1.9rem;}
+  .bus-grp .st{font-weight:700;}
+  .bus-grp .st .sub{font-weight:400;}
+  .bus-grp .nums{line-height:1.6;}
+
+  /* ============ FOOTER ============ */
+  footer{background:var(--navy);}
+  footer img{width:40rem;}
+</style>
+</head>
+<body>
+<div class="frame">
+
+  <!-- ===== HERO ===== -->
+  <div class="hero">
+    <div class="logo"><img src="2026_bible-seminar_bundang/title-12.svg" alt="BIBLE SEMINAR INVITATION"></div>
+    <div class="subtitle"><img src="2026_bible-seminar_bundang/sub-title.svg" alt="너는 청년의 때 곧 곤고한 날이 이르기 전, 나는 아무 낙이 없다고 할 해가 가깝기 전에 너의 창조자를 기억하라 — 전도서 12장 1절"></div>
+    <div class="date">2026. 10. 8<small>(목)</small> &ndash; 11<small>(일)</small></div>
+    <div class="host"><span>주최</span>&nbsp;&nbsp;<b>기독교복음침례회 분당교회</b></div>
+  </div>
+
+  <!-- ===== 주요 강연 내용 ===== -->
+  <section class="talks">
+    <h2 class="sec-title">주요 강연 내용</h2>
+    <div class="talk">
+      <h3>우주와 지구, 그리고 인간의 창조</h3>
+      <p>우리가 어디에서 왔는지에 대한 답을 찾습니다.</p>
+    </div>
+    <div class="talk">
+      <h3>이스라엘 역사의 정확성</h3>
+      <p>고고학적 증거를 통해 성경의 진실을 알아봅니다.</p>
+    </div>
+    <div class="talk">
+      <h3>하나님의 사랑과 죄 사함</h3>
+      <p>인생의 근본적인 문제와 해결책을 제시합니다.</p>
+    </div>
+    <div class="talk">
+      <h3>초진사 맞춤 특강</h3>
+      <p>평소 궁금했던 성경 관련 질문을<br>자유롭게 나눌 수 있는 시간입니다.</p>
+    </div>
+  </section>
+
+  <!-- ===== 세미나 일정표 ===== -->
+  <section class="schedule">
+    <h2 class="sec-title">세미나 일정표</h2>
+    <div class="tt">
+      <!-- 좌측 고정 시간열 -->
+      <div class="tt-time">
+        <div class="tt-headh"></div>
+        <div class="tt-grid" id="time-grid">
+          <!-- 시간 라벨 JS 생성 -->
+        </div>
+      </div>
+      <!-- 우측 슬라이드 영역 -->
+      <div class="tt-scroll">
+        <div class="tt-inner">
+          <div class="tt-head">
+            <div class="th"><span>8일(목)</span></div>
+            <div class="th"><span>9일(금)</span></div>
+            <div class="th"><span>10일(토)</span></div>
+            <div class="th"><span>11일(일)</span></div>
+          </div>
+          <div class="tt-grid" id="day-grid">
+            <!-- 구분선 JS 생성 -->
+            <!-- 8일(목) -->
+            <div class="day d0">
+              <div class="blk lec"  style="top:14.4rem;height:9.6rem;">성경은 사실이다 1<br>+ 내용 정리</div>
+              <div class="blk gap"  style="top:24rem;height:2.4rem;">휴식 및 찬양</div>
+              <div class="blk lec"  style="top:26.4rem;height:9.6rem;">성경은 사실이다 2<br>+ 내용 정리</div>
+              <div class="blk meal" style="top:36rem;height:7.2rem;">저녁식사</div>
+              <div class="blk gap"  style="top:43.2rem;height:2.4rem;">준비찬송</div>
+              <div class="blk lec"  style="top:45.6rem;height:9.6rem;">특별강연 1</div>
+            </div>
+            <!-- 9일(금) -->
+            <div class="day d1">
+              <div class="blk lec"  style="top:14.4rem;height:9.6rem;">성경은 사실이다 5<br>+ 내용 정리</div>
+              <div class="blk gap"  style="top:24rem;height:2.4rem;">휴식 및 찬양</div>
+              <div class="blk lec"  style="top:26.4rem;height:9.6rem;">특별강연 2</div>
+              <div class="blk meal" style="top:36rem;height:7.2rem;">저녁식사</div>
+              <div class="blk gap"  style="top:43.2rem;height:2.4rem;">준비찬송</div>
+              <div class="blk lec"  style="top:45.6rem;height:9.6rem;">특별강연 3</div>
+            </div>
+            <!-- 10일(토) -->
+            <div class="day d2">
+              <div class="blk lec"  style="top:14.4rem;height:9.6rem;">성경은 사실이다 6<br>+ 내용 정리</div>
+              <div class="blk gap"  style="top:24rem;height:2.4rem;">휴식 및 찬양</div>
+              <div class="blk lec"  style="top:26.4rem;height:9.6rem;">특별강연 4</div>
+              <div class="blk meal" style="top:36rem;height:7.2rem;">저녁식사</div>
+              <div class="blk gap"  style="top:43.2rem;height:2.4rem;">준비찬송</div>
+              <div class="blk lec"  style="top:45.6rem;height:9.6rem;">특별강연 5</div>
+            </div>
+            <!-- 11일(일) : 오전 일정 -->
+            <div class="day d3">
+              <div class="blk lec"  style="top:0rem;height:9.6rem;">성경은 사실이다 7<br>+ 내용 정리</div>
+              <div class="blk meal" style="top:9.6rem;height:7.2rem;">점심식사</div>
+              <div class="blk gap"  style="top:16.8rem;height:2.4rem;">휴식 및 찬양</div>
+              <div class="blk lec"  style="top:19.2rem;height:9.6rem;">특별강연 6</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 안내사항 ===== -->
+  <section class="notice">
+    <h2 class="sec-title">안내사항</h2>
+    <p class="lead">본인과 타인의 강연 집중을 위해 미리 숙지해주세요.</p>
+    <div class="grid7">
+      <div class="ni"><div class="ico"><img src="2026_bible-seminar_bundang/icon-02.svg" alt=""></div>
+        <p>노트나 필기구를 지참하시면<br>집중에 도움이 됩니다.</p></div>
+      <div class="ni"><div class="ico"><img src="2026_bible-seminar_bundang/icon-03.svg" alt=""></div>
+        <p>실내 냉방이 예상되니<br>겉옷·담요를 챙겨보세요.</p></div>
+      <div class="ni"><div class="ico"><img src="2026_bible-seminar_bundang/icon-04.svg" alt=""></div>
+        <p>강연 시작 전에 미리 자리에<br>착석해주세요.</p></div>
+      <div class="ni"><div class="ico"><img src="2026_bible-seminar_bundang/icon-05.svg" alt=""></div>
+        <p>휴대폰은 전원을 꺼주시거나<br>진동으로 설정해주세요.</p></div>
+      <div class="ni"><div class="ico"><img src="2026_bible-seminar_bundang/icon-06.svg" alt=""></div>
+        <p>지정된 좌석을 이용하며<br>강연 중 이동을 삼가주세요.</p></div>
+      <div class="ni"><div class="ico"><img src="2026_bible-seminar_bundang/icon-07.svg" alt=""></div>
+        <p>스태프의 안내에 적극적인<br>협조 부탁드립니다.</p></div>
+      <div class="ni solo"><div class="ico"><img src="2026_bible-seminar_bundang/icon-08.svg" alt=""></div>
+        <p>스태프의 안내에 적극적인<br>협조 부탁드립니다.</p></div>
+    </div>
+  </section>
+
+  <!-- ===== 오시는 길 ===== -->
+  <section class="location">
+    <h2 class="sec-title">오시는 길</h2>
+    <div class="map"><img src="2026_bible-seminar_bundang/map.svg" alt="오시는 길 지도"></div>
+    <div class="info">
+      <div class="row">
+        <div class="lb">주소</div>
+        <div class="vl">경기 성남시 분당구 백현로 146 중앙상가 5층<br>(현대자동차 대리점 건물)
+          <a class="naver" href="https://map.naver.com/p/search/경기 성남시 분당구 백현로 146" target="_blank" rel="noopener">네이버지도에서 보기 ↗</a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="lb">1주차장</div>
+        <div class="vl">분당고등학교(금-일) : 분당구 내정로165번길 31</div>
+      </div>
+      <div class="row">
+        <div class="lb">2주차장</div>
+        <div class="vl">정자동 공영주차장(유료) :<br>분당구 황새울로116번길 19-8</div>
+      </div>
+      <div class="row">
+        <div class="lb">문의</div>
+        <div class="vl">박기백&nbsp;&nbsp;010-3301-6918<br>강정민&nbsp;&nbsp;010-9954-4556</div>
+      </div>
+
+      <div class="subhead">대중교통 이용 안내</div>
+      <div class="row">
+        <div class="lb">지하철</div>
+        <div class="vl">수내역 2번 출구에서 도보 15분<br>정자역 1번 출구에서 도보 20분</div>
+      </div>
+      <div class="row">
+        <div class="lb">버스</div>
+        <div class="vl">
+          <div class="bus-grp">
+            <div class="st">양지마을 <span class="sub">정류장(도보 1분)</span> 17번, 33번, 395번,<span class="rd"> 7007-1번</span></div>
+          </div>
+          <div class="bus-grp">
+            <div class="st">느티마을.경남빌라 <span class="sub">정류장(도보 5분 거리)</span></div>
+            <div class="nums">250번, 300번, 351번, 380번, 390번, 520번, 66번, 102번, <span class="rd">1101번</span>, <span class="rd">1101N번</span></div>
+          </div>
+          <div class="bus-grp">
+            <div class="st">주공7단지앞.치매안심센터 <span class="sub">정류장(도보 7분 거리)</span></div>
+            <div class="nums">33-1번, 51번, 220번, 720-1번, 720-1A번, 109-2번, <span class="rd">3500번, 7007-1번, 9000번, 9404번, 9407번</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer><img src="2026_bible-seminar_bundang/footer_2x.png" alt="BIBLE SEMINAR INVITATION"></footer>
+
+</div>
+
+<script>
+  // 시간 라벨 + 구분선 생성 (10:00 ~ 22:00, 1시간 단위)
+  (function(){
+    var HR=4.8;               // rem per hour
+    var timeGrid=document.getElementById('time-grid');
+    var dayGrid=document.getElementById('day-grid');
+    for(var h=10;h<=22;h++){
+      var y=(h-10)*HR;
+      // 시간 라벨
+      var lab=document.createElement('div');
+      lab.className='tlab';
+      lab.style.top=y+'rem';
+      lab.textContent=(h<10?'0':'')+h+':00';
+      timeGrid.appendChild(lab);
+      // 구분선 (4열 가로지름)
+      var line=document.createElement('div');
+      line.className='hline';
+      line.style.top=y+'rem';
+      dayGrid.insertBefore(line,dayGrid.firstChild);
+    }
+  })();
+</script>
+</body>
+</html>

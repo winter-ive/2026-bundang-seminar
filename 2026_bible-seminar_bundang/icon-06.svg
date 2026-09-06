@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 175 86">
+  <!-- Generator: Adobe Illustrator 29.8.1, SVG Export Plug-In . SVG Version: 2.1.1 Build 2)  -->
+  <defs>
+    <style>
+      .st0 {
+        fill: none;
+        stroke: #101435;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <path class="st0" d="M112.17,17.06s-3-7.46-24.67-7.46-24.67,7.46-24.67,7.46v17.15h49.35v-17.15Z"/>
+  <path class="st0" d="M111.88,53.53h-48.75c-1.91,0-3.46-1.34-3.46-3v-.18c0-1.66,1.55-3,3.46-3h48.75c1.91,0,3.46,1.34,3.46,3v.18c0,1.66-1.55,3-3.46,3Z"/>
+  <rect class="st0" x="65.43" y="34.21" width="2.23" height="13.14"/>
+  <rect class="st0" x="63.2" y="53.53" width="2.23" height="22.87"/>
+  <rect class="st0" x="107.34" y="34.21" width="2.23" height="13.14" transform="translate(216.91 81.56) rotate(-180)"/>
+  <rect class="st0" x="65.43" y="53.53" width="2.23" height="18.65"/>
+  <rect class="st0" x="107.34" y="53.53" width="2.23" height="18.65" transform="translate(216.91 125.7) rotate(-180)"/>
+  <rect class="st0" x="109.56" y="53.53" width="2.23" height="22.87" transform="translate(221.34 129.92) rotate(-180)"/>
+</svg>
