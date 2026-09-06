@@ -20,6 +20,12 @@
     --cream:#f2ede3;       /* 히어로 밝은 텍스트 */
     --maroon:#9b253e;      /* 강조(빨강) */
   }
+  @font-face {
+  font-family: '바른바탕';
+  src: url('//cdn.jsdelivr.net/korean-webfonts/1/orgs/othrs/kpa/BareunBatang/BareunBatangOTFM.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  } 
   *{box-sizing:border-box;margin:0;padding:0;-webkit-text-size-adjust:100%;}
   html{font-size:10px;}                       /* 데스크톱: 1rem = 10px → frame 40rem = 400px */
   @media (max-width:639.98px){
@@ -65,7 +71,7 @@
 
   /* ============ SECTION 공통 ============ */
   section{padding:0 3rem;}
-  .sec-title{font-size:2.7rem;font-weight:700;color:var(--navy-txt);text-align:center;}
+  .sec-title{font-family:'바른바탕',serif;font-size:2.7rem;font-weight:700;color:var(--navy-txt);text-align:center;}
 
   /* ============ 주요 강연 내용 ============ */
   .talks{background:var(--beige);padding-top:5.6rem;padding-bottom:6rem;}
